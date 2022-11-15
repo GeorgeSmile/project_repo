@@ -1,0 +1,9 @@
+{
+  "customer_name": "Dan",
+  "customer_address": "33 Silly Street",
+  "customer_phone": "07345235"
+}{
+  "customer_name": "George",
+  "customer_address": "666 Devil Street",
+  "customer_phone": "074422234"
+}
