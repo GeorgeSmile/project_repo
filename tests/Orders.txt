@@ -6,4 +6,38 @@
   "customer_name": "George",
   "customer_address": "666 Devil Street",
   "customer_phone": "074422234"
+}{
+  "customer_name": "Harry",
+  "customer_address": "84 Drew Lane",
+  "customer_phone": "0723456744"
+}{
+
+{
+  "customer_name": "bob",
+  "customer_address": "345 ahaha",
+  "customer_phone": "054235363",
+  "customer_order_list": [
+    "vimto",
+    "pepsi",
+    "coke"
+  ]
+}{
+  "customer_name": "yowierqw",
+  "customer_address": "78 asnfkjasnd",
+  "customer_phone": "349082042",
+  "customer_order_list": [
+    "vimto",
+    "pepsi",
+    "coke"
+  ]
+}{
+  "customer_name": "john",
+  "customer_address": "3232 ahaha",
+  "customer_phone": "067424212",
+  "customer_order_list": [
+    "vimto",
+    "pepsi",
+    "coke"
+  ],
+  "customer_courier": "Laurence,07567334566"
 }

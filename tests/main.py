@@ -1,4 +1,5 @@
 import json
+import csv
 from operator import index
 
 
@@ -56,29 +57,7 @@ def main():
             basket()
 
         elif options == "5":
-            customer = {}
-
-            for i in range(1):
-                customer_name = input("Enter your name, 0 to cancel: ")
-                if customer_name == "0":
-                    break
-                customer_address = input("Enter your address, 0 to cancel: ")
-                if customer_address == "0":
-                    break
-                customer_phone = input("Enter your phone number, 0 to cancel: ")
-                if customer_phone == "0":
-                    break
-
-                customer["customer_name"] = customer_name
-                customer["customer_address"] = customer_address
-                customer["customer_phone"] = customer_phone
-                    
-                print(customer)
-
-                with open('C:/vscode/Python/Projects/mini_project/tests/Orders.txt', 'a+') as file: 
-                        file.write(json.dumps(customer, indent=2))
-                        print("Order placed successfully!")
-                        break
+            order_menu()
         
         
 def basket():
@@ -145,7 +124,7 @@ def order_menu():
                             ''')
         
         if order_options == "1":
-            file = open("C:/vscode/Python/Projects/mini_project/tests/couriers.txt", 'r')
+            file = open("C:/vscode/Python/Projects/mini_project/tests/couriers.csv", 'r')
             lines = file.readlines()
             for i, line in enumerate(lines, start=1):
                 print(f"{i}  {line.strip()}")
@@ -169,17 +148,42 @@ def order_menu():
                 customer_phone = input("Enter your phone number, 0 to cancel: ")
                 if customer_phone == "0":
                     break
-
+                
+                courier = open("C:/vscode/Python/Projects/mini_project/tests/couriers.txt", 'r')
+                courier_file = courier.readlines()
+                for i in range(len(courier_file)):
+                    print(i, courier_file[i])
+                courier_index = int(input("Enter a courier index number, 0 to cancel: "))
+                if courier_index == "0":
+                    break
+                customer_courier = courier_file[courier_index].strip()
+    
+                file = open("C:/vscode/Python/Projects/mini_project/tests/basket.txt", 'r')
+                customer_order = file.readlines()
+                customer_order_list = []
+                for i in customer_order:
+                    customer_order_list.append(i.strip())
+            
                 customer["customer_name"] = customer_name
                 customer["customer_address"] = customer_address
                 customer["customer_phone"] = customer_phone
+                customer["customer_order_list"] = customer_order_list
+                customer["customer_courier"] = customer_courier
                     
                 print(customer)
 
                 with open('C:/vscode/Python/Projects/mini_project/tests/Orders.txt', 'a+') as file: 
                         file.write(json.dumps(customer, indent=2))
                         print("Order placed successfully!")
+                        
                         break
+        
+        elif order_options == "0":
+            break
         
             
 main()
+    
+
+    
+                
