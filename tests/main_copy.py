@@ -119,21 +119,22 @@ def order_menu():
     [1] View couriers 
     [2] View basket
     [3] Place order
-    [4] 
+    [4] Update order
     [0] Return to main menu                        
                             ''')
         
         if order_options == "1":
-            file = open("C:/vscode/Python/Projects/mini_project/tests/couriers.csv", 'r')
-            lines = file.readlines()
-            for i, line in enumerate(lines, start=1):
-                print(f"{i}  {line.strip()}")
+            file = open("C:/vscode/Python/Projects/mini_project/tests/couriers_dict.csv", 'r')
+            view_couriers = csv.DictReader(file)
+            for row in view_couriers:
+                print(dict(row))
                 
         elif order_options == "2":
-            file = open("C:/vscode/Python/Projects/mini_project/tests/basket.txt", 'r')
-            lines = file.readlines()
-            for i, line in enumerate(lines, start=1):
-                print(f"{i}  {line.strip()}")
+            file = open("C:/vscode/Python/Projects/mini_project/tests/basket_dict.csv", 'r')
+            view_basket = csv.DictReader(file)
+            for row in view_basket:
+                print(dict(row))
+                
         
         elif order_options == "3":
             customer = {}
@@ -149,21 +150,26 @@ def order_menu():
                 if customer_phone == "0":
                     break
                 
-                courier = open("C:/vscode/Python/Projects/mini_project/tests/couriers.txt", 'r')
-                courier_file = courier.readlines()
-                for i in range(len(courier_file)):
-                    print(i, courier_file[i])
-                courier_index = int(input("Enter a courier index number, 0 to cancel: "))
-                if courier_index == "0":
+                courier = open("C:/vscode/Python/Projects/mini_project/tests/couriers_dict.csv", 'r')
+                reader = csv.DictReader(courier)
+                for row in reader:
+                    print(row)
+                customer_courier = int(input("Enter a courier id number, type 'exit' to cancel: "))
+                if customer_courier == "exit":
                     break
-                customer_courier = courier_file[courier_index].strip()
     
-                file = open("C:/vscode/Python/Projects/mini_project/tests/basket.txt", 'r')
-                customer_order = file.readlines()
-                customer_order_list = []
-                for i in customer_order:
-                    customer_order_list.append(i.strip())
-                    
+                file = open("C:/vscode/Python/Projects/mini_project/tests/drinks_dict.csv", 'r')
+                customer_order = []
+                reader = csv.DictReader(file)
+                for row in reader:
+                    print(row)
+                while True:
+                    customer_order.append(input("Enter product index number: "))
+                    choice = input("Add another product?: ")
+                    if choice == "n":
+                        break
+
+                                    
                 status = ["Delivered", "Confirmed and pending", "Declined", "Out for Delivery"]
 
                 if not customer_courier:
@@ -174,21 +180,22 @@ def order_menu():
                 customer["customer_name"] = customer_name
                 customer["customer_address"] = customer_address
                 customer["customer_phone"] = customer_phone
-                customer["customer_order_list"] = customer_order_list
+                customer["customer_order"] = customer_order
                 customer["customer_courier"] = customer_courier
                 customer["order_status"] = status
                 
                     
                 print(customer)
 
-                with open('C:/vscode/Python/Projects/mini_project/tests/Orders.txt', 'a+') as file: 
-                        file.write(json.dumps(customer, indent=2))
-                        print("Order placed successfully!")
-                        
-                        break
-        
+                with open('C:/vscode/Python/Projects/mini_project/tests/orders_dict.csv', 'a+', newline='') as file:
+                    fieldnames = ["customer_name", "customer_address", "customer_phone", "customer_courier","product_index", "order_status"]
+                    csvwriter = csv.DictWriter(file, fieldnames=fieldnames)
+                    csvwriter.writerow(customer)
+                    break
+                
         elif order_options == "0":
             break
+                        
         
             
 main()

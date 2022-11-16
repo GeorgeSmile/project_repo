@@ -27,14 +27,23 @@ for i in range(1):
     customer_order_list = []
     for i in customer_order:
         customer_order_list.append(i.strip())
-    
+        
+    status = ["Delivered", "Confirmed and pending", "Declined", "Out for Delivery"]
+
+    if not customer_courier:
+        status = status[2]
+    else:
+        status = status[1]
+
+        
     
 
     customer["customer_name"] = customer_name
     customer["customer_address"] = customer_address
     customer["customer_phone"] = customer_phone
     customer["customer_order_list"] = customer_order_list
-    customer["customer_courier"] = customer_courier  
+    customer["customer_courier"] = customer_courier
+    customer["order_status"] = status 
     
     
 
