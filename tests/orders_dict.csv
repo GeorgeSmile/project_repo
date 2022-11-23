@@ -1,4 +1,4 @@
-customer_name,customer_address,customer_phone,customer_courier,product_index
-james,23 ahaioa,072429021,2
-brad,77 campus,07423422,3
-Charlie,77 Happy Street,0723442345,2,"['2', '4']",Confirmed and pending
+customer_name,customer_address,customer_phone,customer_courier,customer_order,status
+John,34 Hello Lane,731355223,2,['0'],
+George,234 Hole Land,724236211,2,['0'],SHIPPED
+

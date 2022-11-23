@@ -40,4 +40,37 @@
     "coke"
   ],
   "customer_courier": "Laurence,07567334566"
+}{
+  "customer_name": "gog",
+  "customer_address": "77 harasdac",
+  "customer_phone": "027482937",
+  "customer_order_list": [
+    "vimto",
+    "pepsi",
+    "coke"
+  ],
+  "customer_courier": "James,07364999999",
+  "customer_status": 1
+}{
+  "customer_name": "graham",
+  "customer_address": "33 dfliasjfao",
+  "customer_phone": "093785902345",
+  "customer_order_list": [
+    "vimto",
+    "pepsi",
+    "coke"
+  ],
+  "customer_courier": "Billy,07543223344",
+  "customer_status": 1
+}{
+  "customer_name": "ron",
+  "customer_address": "343 sdasd",
+  "customer_phone": "098242",
+  "customer_order_list": [
+    "vimto",
+    "pepsi",
+    "coke"
+  ],
+  "customer_courier": "James,07364999999",
+  "order_status": "Confirmed and pending"
 }
