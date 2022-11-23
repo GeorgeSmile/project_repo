@@ -1,4 +1,4 @@
 customer_name,customer_address,customer_phone,customer_courier,customer_order,status
 John,34 Hello Lane,731355223,2,['0'],
-George,234 Hole Land,724236211,2,['0'],SHIPPED
-
+George,234 Big Lane,724236211,2,['0'],SHIPPED
+Harry,33 Smile Road,7232545213,4,"['0', '3', '1']",DELIVERED

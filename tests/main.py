@@ -87,8 +87,8 @@ def order_menu():
             print("\nList of orders:")
             df = pd.read_csv("C:/vscode/Python/Projects/mini_project/tests/orders_dict.csv")
             print(df)
-            input("\nPress enter to return to main menu.")
-            main()
+            input("\nPress enter to return to order menu.")
+            order_menu()
                 
         
         elif order_options == "3":
