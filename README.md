@@ -18,7 +18,7 @@ REQUIREMENTS:
 DESIGN:
 ---------
 I followed the Project_week sheets and googled any issues and problems I came across, or if there was a method I wanted to implement adn did not know how to do it.
-I collaborated with other students, discovering new methods as we learned together. 
+I collaborated with other students, discovering and sharing new methods as we learned together. 
 I dedicated 1 hour of project time after our classes for the day had ended. Although some days I was unable to commit to this.
 
 I was unable to meet the requirements for unit-testing as I was focused on getting everything else done and understanding things properly, I did not have time to go abck to this subject.
